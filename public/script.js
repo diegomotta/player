@@ -3,10 +3,11 @@
    //"http://vjs.zencdn.net/5.4.6/video.js
     loadjscssfile("video-js.css", "css"); //dynamically load and add this .css file
     loadjscssfile("video.js", "js"); //dynamically load "video.js" as a JavaScript file
+
     loadjscssfile("videojs.vast.vpaid.css", "css"); 
     loadjscssfile("videojs_5.vast.vpaid.js", "js");
-
-   
+    loadjscssfile("https://imasdk.googleapis.com/js/sdkloader/ima3.js","js");
+    loadjscssfile("videojs.ima.js", "js");
     function loadjscssfile(filename, filetype){
         if (filetype=="js"){ //if filename is a external JavaScript file
             var fileref=document.createElement('script')
@@ -50,7 +51,7 @@
         //Agregar para dimesionar tamaño
         //'width': 640 ,'height': 480
         //var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true, 'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });player.pause().then(function() {player.currentTime = 0;player.play();}, function() {});var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
-        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
+        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});player.ima.requestAds();");
         x.appendChild(t);
         //document.getElementById("second").appendChild(x);
         
@@ -68,6 +69,4 @@
 
 //http://cdn3.viblast.com/streams/hls/airshow/playlist.m3u8
 })();
-
-
 
