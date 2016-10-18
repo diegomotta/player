@@ -4,6 +4,7 @@
     loadjscssfile("video-js.css", "css"); //dynamically load and add this .css file
     loadjscssfile("video.js", "js"); //dynamically load "video.js" as a JavaScript file
     loadjscssfile("videojs.vast.vpaid.css", "css"); 
+    loadjscssfile("videojs.ima.css", "css");
     loadjscssfile("videojs_5.vast.vpaid.js", "js");
     loadjscssfile("https://imasdk.googleapis.com/js/sdkloader/ima3.js","js");
     loadjscssfile("videojs.ads.js","js");
