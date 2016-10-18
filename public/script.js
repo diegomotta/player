@@ -3,10 +3,10 @@
    //"http://vjs.zencdn.net/5.4.6/video.js
     loadjscssfile("video-js.css", "css"); //dynamically load and add this .css file
     loadjscssfile("video.js", "js"); //dynamically load "video.js" as a JavaScript file
-
     loadjscssfile("videojs.vast.vpaid.css", "css"); 
     loadjscssfile("videojs_5.vast.vpaid.js", "js");
     loadjscssfile("https://imasdk.googleapis.com/js/sdkloader/ima3.js","js");
+    loadjscssfile("videojs.ads.js","js");
     loadjscssfile("videojs.ima.js", "js");
     function loadjscssfile(filename, filetype){
         if (filetype=="js"){ //if filename is a external JavaScript file
@@ -29,7 +29,7 @@
         //Se puede cargar al tag video el data setup
         //data_setup = '{"fluid":true,"plugins": {"vastClient": {"adTagUrl": "sample-vast.xml","adCancelTimeout": 5000,"adsEnabled": true}}}';
         
-        var videoTag = '<video id="example_video_1" class="video-js vjs-default-skin" data-setup={} controls autoplay=true preload="auto">'+
+        var videoTag = '<video id="example_video_1" class="video-js vjs-default-skin" data-setup={} controls preload="auto">'+
         '<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"/>' +
         '<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"/>' +
         '<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"/>' +
@@ -51,7 +51,8 @@
         //Agregar para dimesionar tamaño
         //'width': 640 ,'height': 480
         //var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true, 'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });player.pause().then(function() {player.currentTime = 0;player.play();}, function() {});var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
-        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});player.ima.requestAds();");
+        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'autoplay':true,'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
+
         x.appendChild(t);
         //document.getElementById("second").appendChild(x);
         
