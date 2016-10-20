@@ -9,7 +9,7 @@
     loadjscssfile("https://imasdk.googleapis.com/js/sdkloader/ima3.js","js");
     loadjscssfile("videojs.ads.js","js");
     loadjscssfile("videojs.ima.js", "js");
-    
+
     function loadjscssfile(filename, filetype){
         if (filetype=="js"){ //if filename is a external JavaScript file
             var fileref=document.createElement('script')
@@ -42,17 +42,11 @@
     }
 
     function loadscript(){
-        // var x = document.createElement("script");
-        // //Agregar para dimesionar tamaño
-        // //'width': 640 ,'height': 480
-        // var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true, 'autoplay': true, 'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
-        // x.appendChild(t);
-        // document.getElementById("second").appendChild(x);
         var x = document.createElement("script");
         //Agregar para dimesionar tamaño
         //'width': 640 ,'height': 480
         //var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true, 'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });player.pause().then(function() {player.currentTime = 0;player.play();}, function() {});var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: 'vast.xml',playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});");
-        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'autoplay':true,'poster': 'http://vjs.zencdn.net/v/oceans.png', 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: getAdsUrl,playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});function getAdsUrl() {return 'https://bs.serving-sys.com/Serving?cn=display&c=23&pl=VAST&pli=19214191&PluID=0&pos=5655&ord=[timestamp]&cim=1';}");
+        var t = document.createTextNode("var player = videojs('example_video_1', { 'controls': true,'autoplay':true, 'fluid':true });var adsCancelTimeout = 3000;var vastAd = player.vastClient({adTagUrl: getAdsUrl,playAdAlways: true,adCancelTimeout: adsCancelTimeout, adsEnabled: true ,vpaidFlashLoaderPath: 'VPAIDFlash.swf'});function getAdsUrl() {return 'https://bs.serving-sys.com/Serving?cn=display&c=23&pl=VAST&pli=19214191&PluID=0&pos=5655&ord=[timestamp]&cim=1';}");
         x.appendChild(t);
         //document.getElementById("second").appendChild(x);   
         var contendor = document.getElementById('second');
